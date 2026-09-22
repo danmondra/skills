@@ -20,4 +20,4 @@ npx skills@latest add danmondra/skills
 
 | Skill | Description |
 | ----- | ----------- |
-| _add yours below_ | _run `scripts/link-skills.sh` to install locally_ |
+| [`clase-grabada-interactiva`](./skills/personal/clase-grabada-interactiva/SKILL.md) | Interactive HTML study page built from a recorded class + transcript. |

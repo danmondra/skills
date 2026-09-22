@@ -2,4 +2,4 @@
 
 | Skill | Description |
 | ----- | ----------- |
-| [`example-skill`](./example-skill/SKILL.md) | Example skill. Replace with your own. |
+| [`clase-grabada-interactiva`](./clase-grabada-interactiva/SKILL.md) | Interactive HTML study page built from a recorded class + transcript. |
