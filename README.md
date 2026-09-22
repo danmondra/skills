@@ -20,8 +20,8 @@ npx skills@latest add danmondra/skills
 
 | Skill | Description |
 | ----- | ----------- |
-| [`clase-grabada-interactiva`](./skills/personal/clase-grabada-interactiva/SKILL.md) | Interactive HTML study page built from a recorded class + transcript. |
-| [`ensenar-paso-a-paso`](./skills/personal/ensenar-paso-a-paso/SKILL.md) | Enseña un tema bloque por bloque; el HTML solo recibe lo ya verificado como aprendido. Derivada de `teach` de Matt Pocock. |
+| [`lesson-to-html`](./skills/personal/lesson-to-html/SKILL.md) | Interactive HTML study page built from a recorded class + transcript. |
+| [`teach-slow`](./skills/personal/teach-slow/SKILL.md) | Enseña un tema bloque por bloque; el HTML solo recibe lo ya verificado como aprendido. Derivada de `teach` de Matt Pocock. |
 | [`teach`](./skills/matt-pocock/teach/SKILL.md) | De Matt Pocock (verbatim): enseña un concepto nuevo dentro de un workspace con misión, recursos y learning records. |
 
 ## Agregar una skill (30 segundos)
@@ -29,8 +29,8 @@ npx skills@latest add danmondra/skills
 **Skill propia nueva:**
 
 ```bash
-mkdir -p skills/personal/mi-skill
-# crea skills/personal/mi-skill/SKILL.md con frontmatter name: + description:
+mkdir -p skills/personal/my-skill
+# crea skills/personal/my-skill/SKILL.md con frontmatter name: + description:
 ./scripts/link-skills.sh   # la linkea a ~/.agents/skills y ~/.claude/skills
 ```
 

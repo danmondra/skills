@@ -12,8 +12,8 @@
     "agents"
   ],
   "skills": [
-    "./skills/personal/clase-grabada-interactiva",
-    "./skills/personal/ensenar-paso-a-paso",
+    "./skills/personal/lesson-to-html",
+    "./skills/personal/teach-slow",
     "./skills/matt-pocock/teach"
   ]
 }

@@ -1,5 +1,5 @@
 ---
-name: clase-grabada-interactiva
+name: lesson-to-html
 description: Build and evolve a "clase grabada interactiva" — an interactive HTML study page built from a recorded class (grabación + transcripción). Use when the user hands over a class recording or transcript to study from, or asks to extend the page with their own notes and backing data, tools realigned to the class timeline, per-block quizzes, or player changes.
 ---
 

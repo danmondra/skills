@@ -1,5 +1,5 @@
 ---
-name: ensenar-paso-a-paso
+name: teach-slow
 description: Enseña un tema construyendo una página HTML de estudio bloque por bloque, verificando el aprendizaje antes de agregar cada bloque al HTML. Derivada de "teach" de Matt Pocock. Úsala cuando el usuario quiera aprender algo a fondo y que el HTML solo contenga contenido ya aprendido y verificado.
 disable-model-invocation: true
 argument-hint: "¿Qué quieres aprender?"
@@ -40,7 +40,7 @@ Un ciclo = un bloque. Al cerrar un ciclo, pregunta si sigue con el siguiente o l
 
 ## Estructura de cada bloque en el HTML
 
-Cada bloque anexado lleva las mismas tres partes (metodología de `clase-grabada-interactiva`):
+Cada bloque anexado lleva las mismas tres partes (metodología de `lesson-to-html`):
 
 1. **Lo enseñado** — la explicación acordada del bloque, con sus citas a las fuentes. Prosa fiel a lo que se enseñó, no resumen nuevo.
 2. **El acompañamiento** — apoyo visual o interactivo del bloque (diagramas, simuladores, ejemplos de código). Puede crecer más que el texto; eso está bien.
