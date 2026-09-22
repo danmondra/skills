@@ -1,0 +1,12 @@
+{
+  "name": "danmondra-skills",
+  "version": "0.1.0",
+  "description": "Daniel's personal agent skills.",
+  "author": {
+    "name": "danmondra"
+  },
+  "repository": "https://github.com/danmondra/skills",
+  "license": "MIT",
+  "keywords": ["skills", "agents"],
+  "skills": []
+}

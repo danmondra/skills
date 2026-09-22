@@ -1,0 +1,16 @@
+{
+  "name": "danmondra",
+  "owner": {
+    "name": "danmondra"
+  },
+  "description": "Daniel's personal skills as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "danmondra-skills",
+      "source": "./",
+      "description": "Daniel's personal agent skills.",
+      "category": "general",
+      "keywords": ["skills"]
+    }
+  ]
+}
