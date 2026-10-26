@@ -21,6 +21,7 @@ npx skills@latest add danmondra/skills
 | Skill | Description |
 | ----- | ----------- |
 | [`lesson-to-html`](./skills/personal/lesson-to-html/SKILL.md) | Interactive HTML study page built from a recorded class + transcript. |
+| [`voxtral-transcribe`](./skills/personal/voxtral-transcribe/SKILL.md) | Transcribe audio to JSON/SRT/VTT/TXT with Mistral Voxtral: diarization, context-biasing keywords, chunked + resumable runs for long files. |
 | [`teach-slow`](./skills/personal/teach-slow/SKILL.md) | Enseña un tema bloque por bloque; el HTML solo recibe lo ya verificado como aprendido. Derivada de `teach` de Matt Pocock. |
 | [`teach`](./skills/matt-pocock/teach/SKILL.md) | De Matt Pocock (verbatim): enseña un concepto nuevo dentro de un workspace con misión, recursos y learning records. |
 
