@@ -56,4 +56,4 @@ A rendered computed value — a simulator output, a note's computed line — pro
 ## Reference
 
 - [PIPELINE.md](PIPELINE.md) — recording → assets: compress, embed, SRT→VTT, mine cue times, serve.
-- [COMPONENTS.md](COMPONENTS.md) — style, then block, timeline, timestamps, tools, notes, quiz, player: markup shapes, runtime behavior, gotchas.
+- [COMPONENTS.md](COMPONENTS.md) — style, then block, timeline, timestamps, tools, notes, quiz, player: markup shapes, speed and ±10 s controls, per-block Prev/Next, keybindings, runtime behavior, gotchas.
