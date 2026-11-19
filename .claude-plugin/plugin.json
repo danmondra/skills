@@ -15,6 +15,7 @@
     "./skills/personal/lesson-to-html",
     "./skills/personal/teach-slow",
     "./skills/personal/voxtral-transcribe",
+    "./skills/personal/groq-transcribe",
     "./skills/matt-pocock/teach"
   ]
 }
