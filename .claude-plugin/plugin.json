@@ -13,6 +13,7 @@
   ],
   "skills": [
     "./skills/personal/lesson-to-html",
+    "./skills/personal/anki-add",
     "./skills/personal/teach-slow",
     "./skills/personal/voxtral-transcribe",
     "./skills/personal/groq-transcribe",

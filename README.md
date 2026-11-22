@@ -21,6 +21,7 @@ npx skills@latest add danmondra/skills
 | Skill | Description |
 | ----- | ----------- |
 | [`lesson-to-html`](./skills/personal/lesson-to-html/SKILL.md) | Interactive HTML study page built from a recorded class + transcript. |
+| [`anki-add`](./skills/personal/anki-add/SKILL.md) | Add decks and flashcards to a local Anki collection via the official `anki` Python library — read-only inspection, multi-template card pruning, write-then-verify. |
 | [`voxtral-transcribe`](./skills/personal/voxtral-transcribe/SKILL.md) | Transcribe audio to JSON/SRT/VTT/TXT with Mistral Voxtral: diarization, context-biasing keywords, chunked + resumable runs for long files. |
 | [`groq-transcribe`](./skills/personal/groq-transcribe/SKILL.md) | Transcribe audio/video to SRT with Groq Whisper large-v3: single request up to ~100 min, byte-sized chunking beyond that, resumable runs, absolute timestamps. |
 | [`teach-slow`](./skills/personal/teach-slow/SKILL.md) | Enseña un tema bloque por bloque; el HTML solo recibe lo ya verificado como aprendido. Derivada de `teach` de Matt Pocock. |
