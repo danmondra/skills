@@ -36,7 +36,9 @@ What it does, and what it prints:
 3. Encodes once. If it fits — up to ~100 min at 32 kbps — that is **the only request**. Longer audio is split with `-c copy` (no re-encode) into budget-sized chunks sent in parallel.
 4. Merges, prints the segments at every chunk boundary (`boundary @ …`), clamps zero/negative-length segments, flags hallucination loops, trims the trailing 1–2 word filler (`y`, `gracias`), writes the SRT, and reports total time.
 
-Read the stderr; it already contains the checks you would otherwise do by hand (boundaries, trimmed tail, duration mismatch, boilerplate share, loops). **A `WARNING: … hallucination loop` line means the transcript is wrong in those stretches. Do not deliver it.** Re-run with no `--prompt` and `--language auto`.
+Read the stderr; it already contains the checks you would otherwise do by hand (boundaries, trimmed tail, duration mismatch, boilerplate share, loops).
+
+A `WARNING: … hallucination loop` line is a suspect, not a verdict. Do not re-run yet, and do not read the SRT. Isolate the flagged cues plus one cue before and after each (a few lines, not the file). A loop is the same text repeating, or a stretch that does not continue the lines around it. Different short phrases sitting between normal lines are slow speech — board work, a pause — and the transcript stands. Re-run the whole file with no `--prompt` and `--language auto` only when that local check shows a loop.
 
 ### After the run: fix names, don't prompt for them
 
@@ -130,9 +132,9 @@ curl -s "https://api.groq.com/openai/v1/audio/transcriptions" \
 - **Hallucination on silence.** Long silence yields filler or boilerplate ("Gracias por ver el video", a run of `y`). Trailing 1–2 word segments are trimmed by default and listed on stderr; a legitimate closing "muchas gracias" goes with them — use `--keep-tail` if that matters.
 - **Prompts are a gamble; the default is none.** On one 300s sample, a names-only prompt recovered `Tewchitlán`, and a topic prompt dropped 483 to 464 words. On a 69-min conference, a hint built automatically from the path (`Conferencia Economía Digital conferences economics`) made Whisper write `Económica Digital` in 30 s cues for minutes at a time. Its 300s sample fell from 82 cues to 14. The same sample with real speaker names (`Raúl Marín, Manuel Reyes, Jorge Alonso Bustamante`) still lost 37% of words (664 → 416) and inserted a name mid-sentence, with `es` or `auto` alike. Path-derived prompting was removed for this reason. Correct names in the output instead.
 - **`--language` plus a written `--prompt` is the failure mode to avoid.** Measured on a 300s Spanish sample: `language=en` alone returned 484 words; the prompt alone 393; **both together 162 words with `Speaker 1` filler**. The binary refuses that pair unless `--allow-language-prompt`, and warns when >5% of segments are boilerplate.
-- **Loop detection.** The binary warns when ≥3 cues of ≥10 s carry under 0.3 words/s (speech runs 2–3), or when one text makes up over 10% of the cues (and appears at least 5 times). Both fired on the prompted sample above. Neither fired on the clean 69-min transcript. The older boilerplate regex caught none of this because the looped phrase was arbitrary.
+- **Loop detection.** The binary warns when ≥3 cues of ≥10 s carry under 0.3 words/s (speech runs 2–3), or when one text makes up over 10% of the cues (and appears at least 5 times). The second test is a loop. The first also fires on a lecture: one word held for 15 s while someone writes on the board, three times in an hour. Both fired on the prompted sample above. Neither fired on the clean 69-min transcript. Judge from the isolated cues, as in the fast path — a warning alone is not a reason to re-run.
 - **Level is not the problem, so don't normalize reflexively.** -34 dB mean transcribed identically to -18 dB (483 vs 493 words over 300s); attenuation to -50 dB still produced no `Speaker 1`.
-- **Re-sending a clean request is the cheapest test.** When output looks wrong, re-run with `--language auto` and no `--prompt` before changing anything else.
+- **A second request is the test after the local check fails.** When the isolated cues show a loop, re-run with `--language auto` and no `--prompt` before changing anything else.
 
 ## Files in this skill
 
